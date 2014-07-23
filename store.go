@@ -6,7 +6,7 @@ package sessions
 
 import (
 	"encoding/base32"
-	"github.com/frogprog/floki"
+	"github.com/go-floki/floki"
 	"github.com/gorilla/securecookie"
 	"io"
 	"net/http"

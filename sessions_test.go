@@ -1,10 +1,9 @@
 package sessions
 
 import (
-	"github.com/frogprog/floki"
+	"github.com/go-floki/floki"
 	"net/http"
 	"net/http/httptest"
-	//	"strings"
 	"testing"
 )
 

@@ -7,7 +7,7 @@ package sessions
 import (
 	"encoding/gob"
 	"fmt"
-	"github.com/frogprog/floki"
+	"github.com/go-floki/floki"
 	"net/http"
 	"time"
 )

@@ -62,6 +62,7 @@ func Sessions(name string, store Store, options *Options) floki.HandlerFunc {
 		}
 
 		c.Set("_session", s)
+
 		// export session values to the request context
 		c.Set("session", s.Values)
 
@@ -112,6 +113,7 @@ func (s *Session) Flashes(vars ...string) []interface{} {
 		// Drop the flashes and return it.
 		delete(s.Values, key)
 		flashes = v.([]interface{})
+		s.dirty = true
 	}
 	return flashes
 }
@@ -130,6 +132,7 @@ func (s *Session) AddFlash(value interface{}, vars ...string) {
 		flashes = v.([]interface{})
 	}
 	s.Values[key] = append(flashes, value)
+	s.dirty = true
 }
 
 // Save is a convenience method to save this session. It is the same as calling
